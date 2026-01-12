@@ -6,6 +6,10 @@
   font-weight: 700; font-style: normal; font-display: swap;
 }
 @font-face {
+  font-family: 'Oxanium'; src: url('fonts/Oxanium-SemiBold.ttf') format('truetype');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
   font-family: 'Oxanium'; src: url('fonts/Oxanium-Medium.ttf') format('truetype');
   font-weight: 500; font-style: normal; font-display: swap;
 }
@@ -51,9 +55,15 @@
   --bg-linear-dark: #1C2132;
 
   --bg-card-light: #35457D;
+  --bg-card-light-hover: #3f508d;
+
   --bg-card-dark: #2C3867;
+  --bg-card-dark-hover: #303d74;
+
   --bg-project-card: #303E74;
 
+  --text-select: #ffffff;
+  --bg-select: #eab122;
   /* Fonts */
   --title-font: 'Oxanium', cursive;
   --subtitle-font: 'Roboto', sans-serif;
@@ -74,6 +84,23 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* --- SELECT SETTINGS --- */
+::selection {
+  background-color: var(--bg-select);
+  color: var(--text-select);
+  -webkit-text-fill-color: var(--text-select);
+}
+::-moz-selection {
+  background-color: var(--bg-select);
+  color: var(--text-select);
+  -webkit-text-fill-color: var(--text-select);
+}
+::-webkit-selection {
+  background-color: var(--bg-select);
+  color: var(--text-select);
+  -webkit-text-fill-color: var(--text-select);
 }
 
 /* --- TITLES --- */
@@ -143,7 +170,8 @@ span {
 }
 
 /* --- FONT SIZE --- */
-.fs-14 { font-size: 12px; }
+.fs-12 { font-size: 12px; }
+.fs-13 { font-size: 13px; }
 .fs-14 { font-size: 14px; }
 .fs-17 { font-size: 17px; }
 .fs-18 { font-size: 18px; }
@@ -168,6 +196,13 @@ span {
   padding: 15px;
   border: 2px solid transparent;
   border-radius: 5px;
+  transition: all 0.2s ease;
+}
+.card-light:hover {
+  background-color: var(--bg-card-light-hover);
+  border-color: var(--primary-dark);
+  transform: scale(1.05);
+  transition: all 0.4s ease;
 }
 .card-light img {
   width: 35px;
@@ -181,6 +216,13 @@ span {
   text-align: center;
   border: 2px solid transparent;
   border-radius: 10px;
+  transition: all 0.2s ease;
+}
+.card-dark:hover {
+  background-color: var(--bg-card-dark-hover);
+  border-color: var(--primary-dark);
+  transform: scale(1.05);
+  transition: all 0.4s ease;
 }
 
 /* --- CONTAINERS --- */
@@ -219,6 +261,29 @@ span {
   border: 2px solid var(--primary-dark);
   border-radius: 10px;
   width: fit-content;
+  transition: all 0.3s ease;
+}
+.primary-btn:hover {
+  color: var(--primary-dark);
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+/* --- NAVBAR & FOOTER --- */
+.nav-link {
+  transition: all 0.2s ease;
+}
+.nav-link:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.social-link {
+  transition: all 0.3s ease;
+}
+.social-link:hover {
+  transform: scale(1.15);
+  transition: all 0.2s ease;
 }
 
 /* --- STACK --- */
@@ -258,6 +323,9 @@ span {
   border-radius: 30px;
   background-color: var(--primary-dark);
 }
+.card-dark a:hover {
+  text-decoration: underline;
+}
 
 /* --- PARCOURS --- */
 .timeline-visual {
@@ -277,6 +345,89 @@ span {
   flex-grow: 1;
   z-index: 1;
   margin-top: -5px;
+}
+
+
+/* --- ENVIRONMENT --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* item */
+.skills-items {
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+  margin-bottom: 4vh;
+  text-align: center;
+}
+
+/* Logiciels utilisés */
+.infinite-scroll {
+  width: 90%;
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  user-select: none;
+  position: relative;
+  margin-bottom: 50px;
+  --scroll-duration: 30s;
+  --loop-width: 100%;
+}
+
+.infinite-scroll ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+  width: max-content;
+  white-space: nowrap;
+  animation: marquee var(--scroll-duration) linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-1 * var(--loop-width)));
+  }
+}
+
+.infinite-scroll .item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  gap: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition-duration: 0.2s;
+}
+.infinite-scroll .item:hover {
+  transform: scale(1.15);
+  transition: all 0.3s ease;
+}
+
+.infinite-scroll .item img {
+  width: 40px;
+  height: auto;
+  flex-shrink: 0;
+}
+.infinite-scroll .item p {
+  margin: 0;
+  font-size: 18px;
+  white-space: nowrap;
+  flex: 0 1 auto;
+  color: var(--secondary-dark);
 }
 
 /* --- PROJECTS --- */
@@ -325,4 +476,10 @@ span {
   color: var(--primary-dark);
   font-size: 28px;
   line-height: 28px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.plus-btn:hover {
+  transform: scale(1.25);
+  transition: all 0.3s ease;
 }
