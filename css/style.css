@@ -456,10 +456,14 @@ span {
   border-radius: 20px;
 }
 .project-card img {
-  aspect-ratio: 333 / 200;
+  aspect-ratio: 333 / 220;
   width: 100%;
   height: auto;
   border-radius: 20px 20px 0 0;
+  object-fit: cover;
+}
+.project-card-hidden {
+  display: none !important;
 }
 
 .badge {
@@ -470,7 +474,7 @@ span {
   text-transform: uppercase;
 }
 
-.plus-btn {
+.plus-btn, .link-btn {
   background-color: transparent;
   border: none;
   color: var(--primary-dark);
@@ -479,7 +483,74 @@ span {
   cursor: pointer;
   transition: all 0.2s ease;
 }
-.plus-btn:hover {
+.plus-btn:hover, .link-btn:hover {
   transform: scale(1.25);
   transition: all 0.3s ease;
+}
+
+body.overlay-open {
+  overflow: hidden;
+}
+
+.image-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 5, 15, 0.85);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 2000;
+  padding: 24px;
+  backdrop-filter: blur(2px);
+}
+.image-overlay.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.image-overlay__content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.image-overlay.is-visible .image-overlay__content {
+  transform: scale(1);
+  opacity: 1;
+}
+.image-overlay__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 16px;
+  background: #0d0d16;
+  box-shadow: 0 10px 45px rgba(0, 0, 0, 0.55);
+}
+.image-overlay__close {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--bg-main);
+  font-size: 28px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.image-overlay__close:hover {
+  transform: scale(1.05);
+  background: #fff;
 }
