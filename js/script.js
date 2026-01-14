@@ -174,12 +174,103 @@
     }
   };
 
+  // Tooltip content toggle on CV button
+  const setupCvTooltip = () => {
+    const cvBtn = document.getElementById("cv-btn");
+    if (!cvBtn) return;
+
+    const defaultTooltip = cvBtn.getAttribute("data-tooltip") || "81,7 Ko";
+    const clickedTooltip = "Téléchargé !";
+
+    cvBtn.addEventListener("click", () => {
+      const current = cvBtn.getAttribute("data-tooltip") || defaultTooltip;
+      const next = current === defaultTooltip ? clickedTooltip : defaultTooltip;
+      cvBtn.setAttribute("data-tooltip", next);
+    });
+  };
+
+  // Stack cards staggered animation on scroll
+  const setupStackAnimation = () => {
+    const stackGrid = document.querySelector(".stack-grid");
+    const items = Array.from(document.querySelectorAll(".stack-grid .stack-item"));
+    if (!stackGrid || !items.length) return;
+
+    items.forEach((item) => {
+      item.style.opacity = "0";
+      item.style.transform = "translateX(-24px)";
+    });
+
+    let started = false;
+    const playAnimation = (index) => {
+      if (index >= items.length) return;
+      const item = items[index];
+      item.classList.add("is-visible");
+      item.style.animation = "stackFadeIn 0.75s forwards";
+      setTimeout(() => playAnimation(index + 1), 250);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        if (entries[0].isIntersecting && !started) {
+          started = true;
+          playAnimation(0);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    observer.observe(stackGrid);
+  };
+
+  // Mobile nav toggle
+  const setupMobileNav = () => {
+    const toggle = document.getElementById("nav-toggle");
+    const menu = document.getElementById("nav-menu");
+    const closeBtn = document.getElementById("nav-close");
+    if (!toggle || !menu) return;
+
+    const links = Array.from(menu.querySelectorAll("a"));
+
+    const closeMenu = () => {
+      menu.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("nav-open");
+    };
+
+    toggle.addEventListener("click", () => {
+      const isOpen = menu.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      document.body.classList.toggle("nav-open", isOpen);
+    });
+
+    links.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        closeMenu();
+      });
+    }
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 992) {
+        closeMenu();
+      }
+    });
+  };
+
   // Load functions on load
   window.addEventListener("load", () => {
     setCurrentYear();
     setupInfiniteScroll();
     setupProjectImageModal();
     setupProjectFilter();
+    setupCvTooltip();
+    setupStackAnimation();
+    setupMobileNav();
   });
 
   window.addEventListener("resize", setupInfiniteScroll);

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Sandra CHAMP-RIGOT</title>
-    <link rel="shortcut icon" href="img/logo_sandra-cr.png">
+    <link rel="shortcut icon" href="img/logo_sandra-cr.webp">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -13,13 +13,13 @@
   <div class="container-hero" id="accueil">
     <div class="container-width d-flex flex-column gap-5 mb-3">
       <!-- Navbar -->
-      <div class="d-flex align-items-center justify-content-between py-4">
+      <div class="d-flex align-items-center justify-content-between py-4 navbar-main">
         <div class="d-flex align-items-center" style="gap: 12px;">
-          <img src="/img/logo_sandra-cr.png" class="mb-1" style="width: 40px; height: 40px;">
+          <img src="./img/logo_sandra-cr.webp" class="mb-1" style="width: 40px; height: 40px;">
           <a href="#accueil" class="oxanium-bold fs-20 text-white">Sandra C.R</a>
         </div>
 
-        <div class="d-flex gap-4">
+        <div class="d-none d-lg-flex gap-4">
           <a href="#accueil" class="text-white nav-link px-1">Accueil</a>
           <a href="#a-propos" class="text-white nav-link px-1">A propos</a>
           <a href="#competences" class="text-white nav-link px-1">Compétences</a>
@@ -27,7 +27,23 @@
           <a href="#projets" class="text-white nav-link px-1">Projets</a>
         </div>
 
-        <a href="contact.html" class="primary-btn">Me contacter</a>
+        <a href="contact.html" class="primary-btn d-none d-lg-inline-flex">Me contacter</a>
+
+        <button class="nav-mobile-toggle d-lg-none" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="nav-menu flex-column align-items-center justify-content-center d-lg-none" id="nav-menu">
+        <button class="nav-menu__close" id="nav-close" aria-label="Fermer le menu"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16"><path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/></svg></button>
+        <a href="#accueil" class="text-white nav-link px-1">Accueil</a>
+        <a href="#a-propos" class="text-white nav-link px-1">A propos</a>
+        <a href="#competences" class="text-white nav-link px-1">Compétences</a>
+        <a href="#parcours" class="text-white nav-link px-1">Parcours</a>
+        <a href="#projets" class="text-white nav-link px-1">Projets</a>
+        <a href="contact.html" class="primary-btn text-center mt-2">Me contacter</a>
       </div>
 
       <!-- Contenu -->
@@ -41,7 +57,7 @@
 
           <p class="text-white">Etudiante et alternante en <span>3ème année de Bachelor Développement Web</span> et passionnée par la programmation front-end et back-end.</p>
 
-          <a href="docs/cv_sandra_champ-rigot.pdf" class="primary-btn mt-3" download="cv_sandra_champ-rigot.pdf">
+          <a href="docs/cv_sandra_champ-rigot.pdf" class="primary-btn mt-3" id="cv-btn" download="cv_sandra_champ-rigot.pdf" data-tooltip="81,7 Ko">
             <div class="d-flex align-items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
                 <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
@@ -53,19 +69,19 @@
         </div>
 
         <!-- Partie droite -->
-        <img src="img/pc-img.png" alt="Portable digital avec une fenêtre de code" style="aspect-ratio: 412 / 418;">
+        <img src="img/pc-img.webp" alt="Portable digital avec une fenêtre de code" style="aspect-ratio: 412 / 418;">
       </div>
     </div>
 
     <!-- Vague -->
-    <img src="/img/wave-static.png" style="width: 100%; filter: grayscale(100%);">
+    <img src="./img/wave-static.png" style="width: 100%; filter: grayscale(100%);">
   </div>
 
   <!-- About Section -->
   <div class="container-light" id="a-propos">
     <div class="container-width d-flex align-items-center gap-5 py-5">
       <!-- Partie gauche -->
-      <img src="/img/photo-perso.png" alt="Portrait Sandra Champ-Rigot">
+      <img src="./img/photo-perso.webp" alt="Portrait Sandra Champ-Rigot">
 
       <!-- Partie droite -->
       <div>
@@ -125,7 +141,7 @@
   <!-- Skills section -->
   <div class="container-dark" id="competences">
     <!-- Vague -->
-    <img src="/img/wave-static-reverse.png" style="width: 100%; filter: grayscale(100%);">
+    <img src="./img/wave-static-reverse.png" style="width: 100%; filter: grayscale(100%);">
 
     <div class="container-width d-flex flex-column align-items-center gap-5 py-5" style="overflow: hidden;">
       <!-- Stack section -->
@@ -137,11 +153,11 @@
         </div>
 
         <!-- Content -->
-        <div class="row g-4">
-          <div class="col-3">
-            <div class="card-light">
-              <div class="d-flex align-items-center justify-content-between">
-                <img src="/img/stack/html-icon.png" alt="Icône HTML">
+        <div class="row g-4 stack-grid">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card-light stack-item">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <img src="./img/stack/html-icon.webp" alt="Icône HTML">
                 <p class="oxanium-bold text-white text-center fs-18 w-100 mb-0">HTML5</p>
               </div>
   
@@ -154,10 +170,10 @@
             </div>
           </div>
           
-          <div class="col-3">
-            <div class="card-light">
-              <div class="d-flex align-items-center justify-content-between">
-                <img src="/img/stack/css-icon.png" alt="Icône CSS">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card-light stack-item">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <img src="./img/stack/css-icon.webp" alt="Icône CSS">
                 <p class="oxanium-bold text-white text-center fs-18 w-100 mb-0">CSS3</p>
               </div>
   
@@ -170,10 +186,10 @@
             </div>
           </div>
           
-          <div class="col-3">
-            <div class="card-light">
-              <div class="d-flex align-items-center justify-content-between">
-                <img src="/img/stack/bootstrap-icon.png" alt="Icône Bootstrap">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card-light stack-item">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <img src="./img/stack/bootstrap-icon.webp" alt="Icône Bootstrap">
                 <p class="oxanium-bold text-white text-center fs-18 w-100 mb-0">Bootstrap</p>
               </div>
   
@@ -186,10 +202,10 @@
             </div>
           </div>
           
-          <div class="col-3">
-            <div class="card-light">
-              <div class="d-flex align-items-center justify-content-between">
-                <img src="/img/stack/php-icon.png" alt="Icône PHP">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card-light stack-item">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <img src="./img/stack/php-icon.webp" alt="Icône PHP">
                 <p class="oxanium-bold text-white text-center fs-18 w-100 mb-0">PHP</p>
               </div>
   
@@ -202,10 +218,10 @@
             </div>
           </div>
           
-          <div class="col-3">
-            <div class="card-light">
-              <div class="d-flex align-items-center justify-content-between">
-                <img src="/img/stack/javascript-icon.png" alt="Icône JS">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card-light stack-item">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <img src="./img/stack/javascript-icon.webp" alt="Icône JS">
                 <p class="oxanium-bold text-white text-center fs-18 w-100 mb-0">Javascript</p>
               </div>
   
@@ -218,10 +234,10 @@
             </div>
           </div>
           
-          <div class="col-3">
-            <div class="card-light">
-              <div class="d-flex align-items-center justify-content-between">
-                <img src="/img/stack/typescript-icon.png" alt="Icône TS">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card-light stack-item">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <img src="./img/stack/typescript-icon.webp" alt="Icône TS">
                 <p class="oxanium-bold text-white text-center fs-18 w-100 mb-0">Typescript</p>
               </div>
   
@@ -234,10 +250,10 @@
             </div>
           </div>
           
-          <div class="col-3">
-            <div class="card-light">
-              <div class="d-flex align-items-center justify-content-between">
-                <img src="/img/stack/python-icon.png" alt="Icône Python">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card-light stack-item">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <img src="./img/stack/python-icon.webp" alt="Icône Python">
                 <p class="oxanium-bold text-white text-center fs-18 w-100 mb-0">Python</p>
               </div>
   
@@ -250,10 +266,10 @@
             </div>
           </div>
           
-          <div class="col-3">
-            <div class="card-light">
-              <div class="d-flex align-items-center justify-content-between">
-                <img src="/img/stack/django-icon.png" alt="Icône Django">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card-light stack-item">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <img src="./img/stack/django-icon.webp" alt="Icône Django">
                 <p class="oxanium-bold text-white text-center fs-18 w-100 mb-0">Django</p>
               </div>
   
@@ -266,10 +282,10 @@
             </div>
           </div>
           
-          <div class="col-3">
-            <div class="card-light">
-              <div class="d-flex align-items-center justify-content-between">
-                <img src="/img/stack/sql-icon.png" alt="Icône SQL">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card-light stack-item">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <img src="./img/stack/sql-icon.webp" alt="Icône SQL">
                 <p class="oxanium-bold text-white text-center fs-18 w-100 mb-0">SQL</p>
               </div>
   
@@ -282,10 +298,10 @@
             </div>
           </div>
           
-          <div class="col-3">
-            <div class="card-light">
-              <div class="d-flex align-items-center justify-content-between">
-                <img src="/img/stack/csharp-icon.png" alt="Icône C#">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card-light stack-item">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <img src="./img/stack/csharp-icon.webp" alt="Icône C#">
                 <p class="oxanium-bold text-white text-center fs-18 w-100 mb-0">C#</p>
               </div>
   
@@ -298,10 +314,10 @@
             </div>
           </div>
           
-          <div class="col-3">
-            <div class="card-light">
-              <div class="d-flex align-items-center justify-content-between">
-                <img src="/img/stack/wordpress-icon.png" alt="Icône Wordpress">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card-light stack-item">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <img src="./img/stack/wordpress-icon.webp" alt="Icône Wordpress">
                 <p class="oxanium-bold text-white text-center fs-18 w-100 mb-0">Wordpress</p>
               </div>
   
@@ -314,9 +330,9 @@
             </div>
           </div>
           
-          <div class="col-3">
-            <div class="card-light">
-              <div class="d-flex align-items-center justify-content-between">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card-light stack-item">
+              <div class="d-flex align-items-center justify-content-between mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="var(--primary-dark)" class="bi bi-terminal" viewBox="0 0 16 16">
                   <path d="M6 9a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3A.5.5 0 0 1 6 9M3.854 4.146a.5.5 0 1 0-.708.708L4.793 6.5 3.146 8.146a.5.5 0 1 0 .708.708l2-2a.5.5 0 0 0 0-.708z"/>
                   <path d="M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/>
@@ -344,62 +360,62 @@
           <ul>
             <li>
               <div class="item">
-                <img src="/img/environnement/vscode-icon.png" alt="Icône VSCode">
+                <img src="./img/environnement/vscode-icon.webp" alt="Icône VSCode">
                 <p>Visual Studio Code</p>
               </div>
             </li>
             <li>
               <div class="item">
-                <img src="/img/environnement/vsstudio-icon.png" alt="Icône VStudio 2022">
+                <img src="./img/environnement/vsstudio-icon.webp" alt="Icône VStudio 2022">
                 <p>Visual Studio 2022</p>
               </div>
             </li>
             <li>
               <div class="item">
-                <img src="/img/environnement/github-icon.png" alt="Icône Github">
+                <img src="./img/environnement/github-icon.webp" alt="Icône Github">
                 <p>Github</p>
               </div>
             </li>
             <li>
               <div class="item">
-                <img src="/img/environnement/phpmyadmin-icon.png" alt="Icône phpMyAdmin">
+                <img src="./img/environnement/phpmyadmin-icon.webp" alt="Icône phpMyAdmin">
                 <p>phpMyAdmin</p>
               </div>
             </li>
             <li>
               <div class="item">
-                <img src="/img/environnement/xampp-icon.png" alt="Icône XAMPP">
+                <img src="./img/environnement/xampp-icon.webp" alt="Icône XAMPP">
                 <p>XAMPP</p>
               </div>
             </li>
             <li>
               <div class="item">
-                <img src="/img/environnement/figma-icon.png" alt="Icône Figma">
+                <img src="./img/environnement/figma-icon.webp" alt="Icône Figma">
                 <p>Figma</p>
               </div>
             </li>
             <li>
               <div class="item">
-                <img src="/img/environnement/n8n-icon.png" alt="Icône n8n">
+                <img src="./img/environnement/n8n-icon.webp" alt="Icône n8n">
                 <p>n8n</p>
               </div>
             </li>
             <li>
               <div class="item">
-                <img src="/img/environnement/blender-icon.png" alt="Icône Blender">
+                <img src="./img/environnement/blender-icon.webp" alt="Icône Blender">
                 <p>Blender</p>
               </div>
             </li>
           </ul>
           <ul aria-hidden="true">
-            <li><div class="item"><img src="/img/environnement/vscode-icon.png" alt="Icône VSCode"><p>Visual Studio Code</p></div></li>
-            <li><div class="item"><img src="/img/environnement/vsstudio-icon.png" alt="Icône VStudio 2022"><p>Visual Studio 2022</p></div></li>
-            <li><div class="item"><img src="/img/environnement/github-icon.png" alt="Icône Github"><p>Github</p></div></li>
-            <li><div class="item"><img src="/img/environnement/phpmyadmin-icon.png" alt="Icône phpMyAdmin"><p>phpMyAdmin</p></div></li>
-            <li><div class="item"><img src="/img/environnement/xampp-icon.png" alt="Icône XAMPP"><p>XAMPP</p></div></li>
-            <li><div class="item"><img src="/img/environnement/figma-icon.png" alt="Icône Figma"><p>Figma</p></div></li>
-            <li><div class="item"><img src="/img/environnement/n8n-icon.png" alt="Icône n8n"><p>n8n</p></div></li>
-            <li><div class="item"><img src="/img/environnement/blender-icon.png" alt="Icône Blender"><p>Blender</p></div></li>
+            <li><div class="item"><img src="./img/environnement/vscode-icon.webp" alt="Icône VSCode"><p>Visual Studio Code</p></div></li>
+            <li><div class="item"><img src="./img/environnement/vsstudio-icon.webp" alt="Icône VStudio 2022"><p>Visual Studio 2022</p></div></li>
+            <li><div class="item"><img src="./img/environnement/github-icon.webp" alt="Icône Github"><p>Github</p></div></li>
+            <li><div class="item"><img src="./img/environnement/phpmyadmin-icon.webp" alt="Icône phpMyAdmin"><p>phpMyAdmin</p></div></li>
+            <li><div class="item"><img src="./img/environnement/xampp-icon.webp" alt="Icône XAMPP"><p>XAMPP</p></div></li>
+            <li><div class="item"><img src="./img/environnement/figma-icon.webp" alt="Icône Figma"><p>Figma</p></div></li>
+            <li><div class="item"><img src="./img/environnement/n8n-icon.webp" alt="Icône n8n"><p>n8n</p></div></li>
+            <li><div class="item"><img src="./img/environnement/blender-icon.webp" alt="Icône Blender"><p>Blender</p></div></li>
           </ul>
         </div>
 
@@ -417,7 +433,7 @@
 
         <!-- Content -->
         <div class="row g-4">
-          <div class="col-4">
+          <div class="col-lg-4 col-sm-6 col-12">
             <div class="card-dark d-flex flex-column align-items-center justify-content-center gap-2">
               <div class="round-icon d-flex align-items-center justify-content-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#fff" class="bi bi-volume-up-fill" viewBox="0 0 16 16">
@@ -443,7 +459,7 @@
             </div>
           </div>
 
-          <div class="col-4">
+          <div class="col-lg-4 col-sm-6 col-12">
             <div class="card-dark d-flex flex-column align-items-center justify-content-center gap-2">
               <div class="round-icon d-flex align-items-center justify-content-center">
                 <svg width="18" height="26" viewBox="0 0 18 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -471,7 +487,7 @@
             </div>
           </div>
 
-          <div class="col-4">
+          <div class="col-lg-4 col-sm-6 col-12">
             <div class="card-dark d-flex flex-column align-items-center justify-content-center gap-2">
               <div class="round-icon d-flex align-items-center justify-content-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#fff" class="bi bi-box" viewBox="0 0 16 16">
@@ -498,7 +514,7 @@
     </div>
 
     <!-- Vague -->
-    <img src="/img/wave-static.png" style="width: 100%; filter: grayscale(100%);">
+    <img src="./img/wave-static.png" style="width: 100%; filter: grayscale(100%);">
   </div>
 
   <!-- Parcours section -->
@@ -510,8 +526,8 @@
         <h2 class="primary-light text-center">Expériences & Formations</h1>
       </div>
 
-      <!-- Content -->
-      <div class="d-flex justify-content-center gap-2">
+      <!-- above lg -->
+      <div class="d-flex justify-content-center gap-2 timeline-dual d-none d-lg-flex">
         <div class="timeline-container">
           <div class="timeline-item d-flex justify-content-center gap-3">
             <!-- Expérience - ALTERNANCE -->
@@ -581,7 +597,74 @@
             </div>
           </div>
         </div>
+      </div>
 
+      <!-- lg and below -->
+      <div class="timeline-columns d-lg-none w-100">
+        <div class="row g-4">
+          <div class="col-lg-6 col-12">
+            <div class="timeline-column">
+              <div class="timeline-entry">
+                <div class="timeline-entry__content">
+                  <p class="oxanium-bold fs-20 primary-light pb-1">Alternance Développeuse web</p>
+                  <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                    <p class="text-white poppins-bold px-2 py-1 m-0" style="background-color: var(--secondary-dark);">sept. 2025 - nov. 2026</p>
+                    <p class="poppins-semibold fs-12 secondary-dark m-0">Groupe Progress, Paris 11e</p>
+                  </div>
+                  <p>Création et maintenance des sites pédagogiques du groupe (HTML, CSS, JS, PHP, Laravel, Bootstrap, SQL)</p>
+                </div>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-entry__content">
+                  <p class="oxanium-bold fs-20 primary-light pb-1">Stage n°2 - Développeuse web</p>
+                  <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                    <p class="text-white poppins-bold px-2 py-1 m-0" style="background-color: var(--secondary-dark);">mars - mai 2025</p>
+                    <p class="poppins-semibold fs-12 secondary-dark m-0">Agent IAD, A distance</p>
+                  </div>
+                  <p>Maquettage et création d'une application métier immobilière (HTML, CSS, JS, PHP, SQL)</p>
+                </div>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-entry__content">
+                  <p class="oxanium-bold fs-20 primary-light pb-1">Stage n°1 - Développeuse web</p>
+                  <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                    <p class="text-white poppins-bold px-2 py-1 m-0" style="background-color: var(--secondary-dark);">avril - juin 2024</p>
+                    <p class="poppins-semibold fs-12 secondary-dark m-0">Opium Digital, A distance</p>
+                  </div>
+                  <p>Création d'un site de location de véhicules au Cameroun et gestion d'une équipe (HTML, CSS, JS, PHP, SQL)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-12">
+            <div class="timeline-column">
+              <div class="timeline-entry">
+                <div class="timeline-entry__content">
+                  <p class="oxanium-bold fs-20 primary-light pb-1">Bachelor Concepteur Développeur Web</p>
+                  <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                    <p class="text-white poppins-bold px-2 py-1 m-0" style="background-color: var(--secondary-dark);">2025 - 2026</p>
+                    <p class="poppins-semibold fs-12 secondary-dark m-0">Digital Campus, Paris 11e</p>
+                  </div>
+                  <p>Formation sur les technologies actuelles : Python, Django, Typescript, Docker, Linux, Figma, n8n</p>
+                </div>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-entry__content">
+                  <p class="oxanium-bold fs-20 primary-light pb-1">BTS SIO option SLAM</p>
+                  <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                    <p class="text-white poppins-bold px-2 py-1 m-0" style="background-color: var(--secondary-dark);">2023 - 2025</p>
+                    <p class="poppins-semibold fs-12 secondary-dark m-0">CFA INSTA, Paris 5e</p>
+                  </div>
+                  <p>Formation axée sur les technologies : HTML, CSS, Javascript, PHP, C#, SQL</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -589,7 +672,7 @@
   <!-- Projects section -->
   <div class="container-dark" id="projets">
     <!-- Vague -->
-    <img src="/img/wave-static-reverse.png" style="width: 100%; filter: grayscale(100%);">
+    <img src="./img/wave-static-reverse.png" style="width: 100%; filter: grayscale(100%);">
 
     <div class="container-width d-flex flex-column gap-5 py-5">
       <!-- Title -->
@@ -613,7 +696,7 @@
         <div class="row g-4">
           <div class="col-6 col-lg-4">
             <div class="project-card d-flex flex-column h-100">
-              <img src="/img/projets/web_jewelre.png" alt="Photo de mon projet">
+              <img src="./img/projets/web_jewelre.webp" alt="Photo de mon projet">
               <div class="p-3 d-flex flex-column justify-content-between gap-3 flex-grow-1">
                 <p class="oxanium-medium fs-17 text-white">E-commerce de vente de bijoux "Jewelr-e"</p>
                 <div class="d-flex align-items-end justify-content-between">
@@ -630,7 +713,7 @@
           </div>
           <div class="col-6 col-lg-4">
             <div class="project-card d-flex flex-column h-100">
-              <img src="/img/projets/maquette_portfolio_2026.png" alt="Photo de mon projet">
+              <img src="./img/projets/maquette_portfolio_2026.webp" alt="Photo de mon projet">
               <div class="p-3 d-flex flex-column justify-content-between gap-3 flex-grow-1">
                 <p class="oxanium-medium fs-17 text-white">Maquette de mon portfolio réalisé en 2026</p>
                 <div class="d-flex align-items-end justify-content-between">
@@ -650,7 +733,7 @@
           </div>
           <div class="col-6 col-lg-4">
             <div class="project-card d-flex flex-column h-100">
-              <img src="/img/projets/modele_pc.png" alt="Photo de mon projet">
+              <img src="./img/projets/modele_pc.webp" alt="Photo de mon projet">
               <div class="p-3 d-flex flex-column justify-content-between gap-3 flex-grow-1">
                 <p class="oxanium-medium fs-17 text-white">Modèle 3D d'un ordinateur portable à échelle réelle</p>
                 <div class="d-flex align-items-end justify-content-between">
@@ -667,7 +750,7 @@
           </div>
           <div class="col-6 col-lg-4">
             <div class="project-card d-flex flex-column h-100">
-              <img src="/img/projets/logiciel_jewelre_stocks.png" alt="Photo de mon projet">
+              <img src="./img/projets/logiciel_jewelre_stocks.webp" alt="Photo de mon projet">
               <div class="p-3 d-flex flex-column justify-content-between gap-3 flex-grow-1">
                 <p class="oxanium-medium fs-17 text-white">Logiciel de gestion de stocks de bijoux</p>
                 <div class="d-flex align-items-end justify-content-between">
@@ -684,7 +767,7 @@
           </div>
           <div class="col-6 col-lg-4">
             <div class="project-card d-flex flex-column h-100">
-              <img src="/img/projets/web_flappy_bird.png" alt="Photo de mon projet">
+              <img src="./img/projets/web_flappy_bird.webp" alt="Photo de mon projet">
               <div class="p-3 d-flex flex-column justify-content-between gap-3 flex-grow-1">
                 <p class="oxanium-medium fs-17 text-white">Jeu en JS en ligne "Flappy Bird"</p>
                 <div class="d-flex align-items-end justify-content-between">
@@ -704,7 +787,7 @@
           </div>
           <div class="col-6 col-lg-4">
             <div class="project-card d-flex flex-column h-100">
-              <img src="/img/projets/web_react_todo_list.png" alt="Photo de mon projet">
+              <img src="./img/projets/web_react_todo_list.webp" alt="Photo de mon projet">
               <div class="p-3 d-flex flex-column justify-content-between gap-3 flex-grow-1">
                 <p class="oxanium-medium fs-17 text-white">ToDo List en ReactJS</p>
                 <div class="d-flex align-items-end justify-content-between">
@@ -724,7 +807,7 @@
           </div>
           <div class="col-6 col-lg-4">
             <div class="project-card d-flex flex-column h-100">
-              <img src="/img/projets/modele_isometric_room.png" alt="Photo de mon projet">
+              <img src="./img/projets/modele_isometric_room.webp" alt="Photo de mon projet">
               <div class="p-3 d-flex flex-column justify-content-between gap-3 flex-grow-1">
                 <p class="oxanium-medium fs-17 text-white">Modèle 3D d'une pièce isométrique</p>
                 <div class="d-flex align-items-end justify-content-between">
@@ -741,7 +824,7 @@
           </div>
           <div class="col-6 col-lg-4">
             <div class="project-card d-flex flex-column h-100">
-              <img src="/img/projets/modele_donuts.png" alt="Photo de mon projet">
+              <img src="./img/projets/modele_donuts.webp" alt="Photo de mon projet">
               <div class="p-3 d-flex flex-column justify-content-between gap-3 flex-grow-1">
                 <p class="oxanium-medium fs-17 text-white">Modèle 3D d'un plat de donuts (apprentissage classique)</p>
                 <div class="d-flex align-items-end justify-content-between">
@@ -758,7 +841,7 @@
           </div>
           <div class="col-6 col-lg-4">
             <div class="project-card d-flex flex-column h-100">
-              <img src="/img/projets/modele_cafe.png" alt="Photo de mon projet">
+              <img src="./img/projets/modele_cafe.webp" alt="Photo de mon projet">
               <div class="p-3 d-flex flex-column justify-content-between gap-3 flex-grow-1">
                 <p class="oxanium-medium fs-17 text-white">Modèle 3D d'un plateau à café à partir d'une photo</p>
                 <div class="d-flex align-items-end justify-content-between">
@@ -779,19 +862,19 @@
     </div>
 
     <!-- Vague -->
-    <img src="/img/wave-static.png" style="width: 100%; filter: grayscale(100%);">
+    <img src="./img/wave-static.png" style="width: 100%; filter: grayscale(100%);">
   </div>
 
   <!-- Footer section -->
   <div class="container-light">
-    <div class="container-width d-flex flex-column gap-5 px-4 py-4">
-      <div class="d-flex align-items-center justify-content-between">
+    <div class="container-width d-flex flex-column gap-sm-5 gap-3 px-4 py-4">
+      <div class="d-flex flex-sm-row flex-column align-items-center justify-content-between gap-sm-0 gap-4">
         <div class="d-flex align-items-center" style="gap: 12px;">
-          <img src="/img/logo_sandra-cr.png" class="mb-1" style="width: 40px; height: 40px;">
+          <img src="./img/logo_sandra-cr.webp" class="mb-1" style="width: 40px; height: 40px;">
           <a href="#accueil" class="oxanium-bold fs-20 primary-light">Sandra C.R</a>
         </div>
 
-        <div class="d-flex gap-4">
+        <div class="d-lg-flex d-sm-none d-flex flex-sm-row flex-column align-items-center gap-sm-4 gap-2">
           <a href="#accueil" class="poppins-medium text-black nav-link">Accueil</a>
           <a href="#a-propos" class="poppins-medium text-black nav-link">A propos</a>
           <a href="#competences" class="poppins-medium text-black nav-link">Compétences</a>
@@ -814,7 +897,15 @@
         </div>
       </div>
 
-      <div class="d-flex align-items-center justify-content-between px-3 pt-2 mt-4" style="border-top: 3px solid var(--primary-light);">
+      <div class="d-lg-none justify-content-around d-sm-flex d-none gap-4 w-100">
+        <a href="#accueil" class="poppins-medium text-black nav-link">Accueil</a>
+        <a href="#a-propos" class="poppins-medium text-black nav-link">A propos</a>
+        <a href="#competences" class="poppins-medium text-black nav-link">Compétences</a>
+        <a href="#parcours" class="poppins-medium text-black nav-link">Parcours</a>
+        <a href="#projets" class="poppins-medium text-black nav-link">Projets</a>
+      </div>
+
+      <div class="d-flex align-items-center justify-content-between px-3 pt-2 mt-sm-4 mt-2" style="border-top: 3px solid var(--primary-light);">
         <p class="fs-14">Designed by Sandra CHAMP-RIGOT</p>
         <p class="fs-14">©Copyright <span id="year" class="text-black"></span> | Tout droits réservés</p>
       </div>
@@ -829,6 +920,8 @@
   </div>
 </body>
 
-<script src="/js/script.js"></script>
+<script src="./js/script.js"></script>
 
 </html>
+
+
