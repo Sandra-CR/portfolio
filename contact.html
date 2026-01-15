@@ -10,26 +10,8 @@
 
   <!-- EmailJS -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function() {
-      emailjs.init({
-        publicKey: "StJICsheTly4VbyiX",
-      });
-    })();
-  </script>
-  <script type="text/javascript">
-    window.onload = function() {
-      document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        emailjs.sendForm('service_vw2z2n3', 'template_ojooikt', this)
-        .then(() => {
-          console.log('L\'e-mail a bien été envoyé !');
-        }, (error) => {
-          console.log('L\'envoi a échoué, veuillez réessayer.', error);
-        });
-      });
-    }
-  </script>
+  <script src="./js/contact.js" defer></script>
+  
 </head>
 <body>
   <!-- HERO SECTION -->
@@ -233,3 +215,4 @@
 <script src="./js/script.js"></script>
 
 </html>
+
