@@ -21,7 +21,7 @@
     window.onload = function() {
       document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault();
-        emailjs.sendForm('contact_service', 'contact_form', this)
+        emailjs.sendForm('service_vw2z2n3', 'template_ojooikt', this)
         .then(() => {
           console.log('L\'e-mail a bien été envoyé !');
         }, (error) => {
