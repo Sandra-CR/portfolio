@@ -82,11 +82,13 @@
 
       <div class="contact-card d-flex flex-lg-row flex-column mb-3">
         <div class="contact-form d-flex flex-column gap-4">
-          <input type="text" name="name" id="name" placeholder="Nom" required>
-          <input type="email" name="email" id="email" placeholder="Adresse mail" required>
-          <input type="text" name="title" id="title" placeholder="Objet" required>
-          <textarea name="message" id="message" rows="6" placeholder="Message" required></textarea>
-          <input type="submit" class="primary-btn px-4 mt-2 w-100" value="Envoyer">
+          <form id="contact-form">
+            <input type="text" name="name" id="name" placeholder="Nom" required>
+            <input type="email" name="email" id="email" placeholder="Adresse mail" required>
+            <input type="text" name="title" id="title" placeholder="Objet" required>
+            <textarea name="message" id="message" rows="6" placeholder="Message" required></textarea>
+            <input type="submit" class="primary-btn px-4 mt-2 w-100" value="Envoyer">
+          </form>
         </div>
 
         <div class="contact-info d-flex flex-column align-items-center gap-5">
